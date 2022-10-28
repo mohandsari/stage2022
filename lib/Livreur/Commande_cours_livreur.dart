@@ -110,14 +110,16 @@ class _Commande_cours_livreurState extends State<Commande_cours_livreur> {
         ],
       ),
       actions: <Widget>[
-        new FlatButton(
+        new TextButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
-          textColor: Theme.of(context).primaryColor,
+          style: TextButton.styleFrom(
+            backgroundColor: Theme.of(context).primaryColor,
+          ),
           child: const Text('Close'),
         ),
-        new FlatButton(
+        new TextButton(
           onPressed: () {
             final docuser = FirebaseFirestore.instance
                 .collection('Commande_en_cours')
@@ -128,7 +130,9 @@ class _Commande_cours_livreurState extends State<Commande_cours_livreur> {
                 );
             Navigator.of(context).pop();
           },
-          textColor: Theme.of(context).primaryColor,
+          style: TextButton.styleFrom(
+            backgroundColor: Theme.of(context).primaryColor,
+          ),
           child: const Text('Confirmer'),
         ),
       ],
